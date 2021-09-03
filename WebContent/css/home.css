@@ -1,0 +1,62 @@
+.header {
+	position: relative; /* needed for stacking */
+	height: 50px;
+	width: 100%;
+	text-align: right;
+}
+
+ul.menuClass,ul.subMenu {
+	list-style-type: none;
+}
+
+ul.mainMenu>li,ul.subMenu>li {
+	margin: 10px;
+}
+
+ul.menuClass>li {
+	display: inline-block;
+	width: 200px;
+	height: auto;
+	background: black;
+	border: 6px solid #000;
+	color: white;
+}
+
+ul.subMenu>li {
+	display: block;
+}
+
+ul.menuClass>li {
+	position: relative;
+}
+
+ul.subMenu {
+	position: absolute;
+}
+
+ul.menuClass ul.subMenu {
+	display: none;
+}
+
+ul.menuClass>li:hover ul.subMenu {
+	display: block;
+}
+
+.footer {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	
+}
+.submeniu {
+	position: center;
+	text-align: left;
+	background :#C0C0C0;
+} 
+
+.content{	
+	width: 1000px;
+	margin: 0 auto;
+}

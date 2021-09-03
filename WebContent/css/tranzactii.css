@@ -1,0 +1,71 @@
+@CHARSET "UTF-8";
+h2{
+	text-align: center;
+}
+.boxForm{
+	width: 300px;
+	float:left;
+}
+
+#afisareButton{
+	width: 100px;
+	height: 30px;
+	
+	border-radius: 5px;
+	font-size: 18px;	
+	margin-left: 300px;
+	cursor: pointer;
+}
+#afisareButton:hover{
+	color: black;
+}
+
+/****************************Tabel****************************/
+#tabelConturiClient, #tabelConturiClient th, #tabelConturiClient td {
+	border: 1px solid;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+ #tabelConturiClient th, #tabelConturiClient td  {
+	width: 200px;
+	height: 30px;
+	font-size: 16px;
+}
+#tabelConturiClient th{
+	
+	font-size: 18px;
+} 
+
+/********************butoane rapoarte*****************/
+.buttonRapoarte{
+	width: 120px;
+	height: 30px;
+	background-color: #5D7979; 
+	color: white;
+	border: #5D7979;
+	border-radius: 5px;
+	font-size: 19px;	
+	margin-left: 50px;
+	cursor: pointer;
+	text-align: center;
+	padding: 4px;
+	float: left;
+}
+
+.buttonRapoarte:hover{
+	color: black;
+}
+
+
+/*******************************MEDIA PRINT for raport HTML************************************/
+@media print
+{
+	#meniu, #header-wrap, #title, .boxForm, h2, input, a, #footer{
+		display: none;
+	}
+
+} 
+
+
+

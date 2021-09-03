@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RaportPdf" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c548267a-8e60-440d-8a9b-3b0cba830276">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idCont" class="java.lang.Integer"/>
+	<parameter name="startDate" class="java.util.Date"/>
+	<parameter name="endDate" class="java.util.Date" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT * FROM tranzactii WHERE IdContSursa=$P{idCont}
+ UNION SELECT * FROM tranzactii WHERE IdContDestinatie= $P{idCont}]]>
+	</queryString>
+	<field name="Id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DataOperatiei" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="IdContSursa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SoldfinalContSursa" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="IdContDestinatie" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SoldFinalContDestinatie" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SumaTranzactie" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="33" height="20" uuid="f458ef82-51e3-4d6e-b222-7f36005378d3"/>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="0" width="79" height="20" uuid="40d27c8f-b877-434c-adbd-d526d7cdb3b5"/>
+				<text><![CDATA[DataOperatiei]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="112" y="0" width="63" height="20" uuid="705d6845-4018-4dcf-b304-f2a86d9daf93"/>
+				<text><![CDATA[IdContSursa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="0" width="91" height="20" uuid="ddc03720-d126-4baf-9a74-9de268e55188"/>
+				<text><![CDATA[SoldfinalContSursa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="0" width="81" height="20" uuid="a1f6cace-b7a5-44f3-95bb-4078133f65fc"/>
+				<text><![CDATA[IdContDestinatie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="347" y="0" width="118" height="20" uuid="ed4bc9f8-0965-47df-974d-0cfe9f44fbf9"/>
+				<text><![CDATA[SoldFinalContDestinatie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="465" y="0" width="79" height="20" uuid="d6f5027b-d4db-4c98-b84a-dfbfd05ae687"/>
+				<text><![CDATA[SumaTranzactie]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="33" height="20" uuid="f116abff-06f3-4eb2-bfba-45f33dad4831"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="33" y="0" width="79" height="20" uuid="f3689599-1ec4-4e2c-ac35-3ebb60106965"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DataOperatiei}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="0" width="33" height="20" uuid="55001d15-dcb9-4192-83b1-a1736489dc0a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{IdContSursa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="188" y="0" width="78" height="20" uuid="3588848c-dfbf-4801-90e6-f4a6ef23c336"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{SoldfinalContSursa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="0" width="54" height="20" uuid="8f5b5f42-dea4-4971-ad33-c4fa3cfd2423"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{IdContDestinatie}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="368" y="0" width="79" height="20" uuid="cc3f6428-61b3-4900-a0ec-995c03806e93"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{SoldFinalContDestinatie}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="465" y="0" width="79" height="20" uuid="328f7288-cd3e-409c-b42c-e06a77c1cbce"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{SumaTranzactie}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
